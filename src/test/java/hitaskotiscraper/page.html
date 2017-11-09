@@ -1,0 +1,206 @@
+CTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi">
+ <head> 
+  <!--[if IE 9]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]--> 
+  <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"> 
+  <title>Hitaskoti.fi | Hae Hitas-asuntojen myynti-ilmoituksia</title> 
+  <script src="/script/javascript.js" language="Javascript" type="text/javascript"></script> 
+  <link href="/style.css" type="text/css" rel="stylesheet"> 
+  <link rel="shortcut icon" href="/favicon.ico"> 
+  <link rel="icon" href="/favicon.ico"> 
+  <!--[if IE 6]><link rel="stylesheet" href="/ie_fix.css" type="text/css"><![endif]-->
+ </head> 
+ <body> 
+  <div id="logo"> 
+   <a href="http://www.hel.fi/www/Helsinki/fi/asuminen-ja-ymparisto/asuminen/hitas/"><img src="/img/helsinki_logo.jpg" alt="Helsinki" style="float:left; margin-left:10px; margin-top:13px; max-width: 188px; max-height: 40px;"></a>
+   <a href="http://hitaskoti.fi"><img src="/img/logo.jpg" alt="Hitaskoti" style="float:right; margin:5px 8px 0 0;"></a> 
+  </div> 
+  <div id="header"> 
+   <div id="inner_header"> 
+    <ul> 
+     <li><a href="/">Pääsivu</a></li> 
+     <li class="valittu">Hae myynti-ilmoituksia</li> 
+     <li><a href="/osto_haku">Hae ostoilmoituksia</a></li> 
+     <li><a href="/lisaa_ilmoitus">Jätä myynti-ilmoitus</a></li> 
+     <li style="border-right:0;"><a href="/ostan_ilmoitus">Jätä ostoilmoitus</a></li> 
+    </ul> 
+   </div> 
+  </div> 
+  <div id="autentikointi"> 
+   <form method="post"> 
+    <strong>Ilmoituksen hallinta:</strong> 
+    <div style="margin-left:20px; display:inline;" id="d_ilmo_tunniste_temp"> 
+     <input type="text" id="ilmo_tunniste_temp" value="Tunniste #" onFocus="k_tunniste()" style="font-size:11px; color:#C36684; border:1px solid #E1B3C1;" readonly> 
+    </div> 
+    <div style="margin-left:20px; display:none;" id="d_ilmo_tunniste"> 
+     <input type="text" id="ilmo_tunniste" name="ilmo_tunniste" onBlur="p_tunniste()" style="font-size:11px; border:1px solid #E1B3C1;"> 
+    </div> 
+    <div style="display:inline;" id="d_ilmo_salasana_temp"> 
+     <input type="text" id="ilmo_salasana_temp" value="Salasana" onFocus="k_salasana()" style="font-size:11px; color:#C36684; border:1px solid #E1B3C1;" readonly> 
+    </div> 
+    <div style="display:none;" id="d_ilmo_salasana"> 
+     <input type="password" id="ilmo_salasana" name="ilmo_salasana" onBlur="p_salasana()" style="font-size:11px; border:1px solid #E1B3C1;"> 
+    </div> 
+    <input type="submit" value="Kirjaudu" class="submit_hallinta"> 
+    <a href="/uusi_salasana" style="padding-left:10px;">Unohtuiko salasana?</a> 
+   </form> 
+  </div> 
+  <div id="wrapper"> 
+   <div id="breadcrumbs"> 
+    <ul> 
+     <li style="width:398px;"><a href="/haku" style="width:398px;">Laaja haku</a></li> 
+     <li class="valittu valittu_v" style="width:398px; float:right;"><strong>Vaihe 2:</strong> Tarkastele hakutuloksia</li> 
+    </ul>
+    <div class="clear"></div> 
+   </div> 
+   <div class="haku_header"> 
+    <h3 style="margin-top:5px;">
+     <div style="float:left;">
+      Hakutulokset (1-10), haulla löytyi 18 asuntoa.
+     </div></h3> 
+    <div style="float:right;">
+     <a href="/haku">Tee uusi haku</a>
+    </div>
+    <div class="clear"></div>
+   </div> 
+   <div class="hakutulokset"> 
+    <form style="display:inline;" method="post" name="hakulomake">
+     <div style="padding:10px; margin-top:4px; float:left;">
+      &lt; edellinen 
+      <b>1</b> 
+      <a href="javascript:submit_href(2)">2</a> 
+      <a href="javascript:submit_href(2)">seuraava &gt;</a>
+     </div>
+     <div style="padding:10px; margin-top:4px; float:right;">
+      <label for="jarjestys" style="width:50px; font:bold 12px Arial;">Järjestys:</label> 
+      <select name="jarjestys" class="hae_select" onchange="this.form.submit();" style="margin-left:10px; width:200px;"> <option value="1">Lisäyspvm (nousevasti)</option> <option value="2" selected>Lisäyspvm (laskevasti)</option> <option value="3">Hinta (nousevasti)</option> <option value="4">Hinta (laskevasti)</option> <option value="5">Pinta-ala (nousevasti)</option> <option value="6">Pinta-ala (laskevasti)</option> <option value="7">Valmistumisvuosi (nousevasti)</option> <option value="8">Valmistumisvuosi (laskevasti)</option> </select> 
+     </div>
+     <div class="clear"></div>
+     <table cellspacing="0" cellpadding="2" class="taulu_tieto_lista"> 
+      <tbody>
+       <tr class="otsikko_tr">
+        <td style="text-align:center; width:76px;"><b>Kuva</b></td>
+        <td><b>Osoite</b></td>
+        <td style="text-align:center;"><b>Pinta-ala</b></td>
+        <td style="text-align:center;"><b>Velaton myyntihinta</b></td>
+        <td style="text-align:center;"><b>Valmistumisvuosi</b></td>
+        <td style="text-align:center;"><b>Lisätty</b></td>
+       </tr> 
+       <tr class="taulu_vari1">
+        <td style="text-align:center;" class="borderleft">
+         <div style="width:84px; height:56px; margin:3px; padding:0; text-align:left; background-image:url('/kuva/2873/76_0.jpg')">
+          <img src="/img/uusi/vain_vaihto.png" alt="Myös vaihto">
+         </div></td>
+        <td><a href="/asunto/2873" rel="nofollow" target="_blank"><strong>Fenixinrinne 6</strong><br> <span>00</span><span>580</span> Helsinki<br>2h+k, Kerrostalo</a></td>
+        <td style="text-align:center;">68.0 m²</td>
+        <td style="text-align:center;">250 104 <br><span class="harmaa">(3 678,00  / m²)</span></td>
+        <td style="text-align:center;">2011</td>
+        <td class="borderright" style="text-align:center;">6.11.2017</td>
+       </tr> 
+       <tr class="taulu_vari2">
+        <td style="text-align:center;" class="borderleft">
+         <div style="width:84px; height:56px; margin:3px; padding:0; text-align:left; background-image:url('/kuva/2870/76_11.jpg')"></div></td>
+        <td><a href="/asunto/2870" target="_blank"><strong>Latokartanonkaari 41 A 10</strong><br> <span>00</span><span>790</span> Helsinki<br>3h+k+s, Kerrostalo</a></td>
+        <td style="text-align:center;">96.5 m²</td>
+        <td style="text-align:center;">329 000 <br><span class="harmaa">(3 409,33  / m²)</span></td>
+        <td style="text-align:center;">2006</td>
+        <td class="borderright" style="text-align:center;">3.11.2017</td>
+       </tr> 
+       <tr class="taulu_vari1">
+        <td style="text-align:center;" class="borderleft">
+         <div style="width:84px; height:56px; margin:3px; padding:0; text-align:left; background-image:url('/kuva/2869/76_1.jpg')"></div></td>
+        <td><a href="/asunto/2869" target="_blank"><strong>Taimistontie 7 a 10</strong><br> <span>00</span><span>380</span> Helsinki<br>4h+k+s, Kerrostalo</a></td>
+        <td style="text-align:center;">108.0 m²</td>
+        <td style="text-align:center;">429 950 <br><span class="harmaa">(3 981,02  / m²)</span></td>
+        <td style="text-align:center;">2008</td>
+        <td class="borderright" style="text-align:center;">2.11.2017</td>
+       </tr> 
+       <tr class="taulu_vari2">
+        <td style="text-align:center;" class="borderleft">
+         <div style="width:84px; height:56px; margin:3px; padding:0; text-align:left; background-image:url('/kuva/2866/76_0.jpg')">
+          <img src="/img/uusi/vain_vaihto.png" alt="Myös vaihto">
+         </div></td>
+        <td><a href="/asunto/2866" rel="nofollow" target="_blank"><strong>Toini Muonan katu 8</strong><br> <span>00</span><span>560</span> Helsinki<br>2h+k+s, Kerrostalo</a></td>
+        <td style="text-align:center;">50.0 m²</td>
+        <td style="text-align:center;">175 000 <br><span class="harmaa">(3 500,00  / m²)</span></td>
+        <td style="text-align:center;">2004</td>
+        <td class="borderright" style="text-align:center;">27.10.2017</td>
+       </tr> 
+       <tr class="taulu_vari1">
+        <td style="text-align:center;" class="borderleft">
+         <div style="width:84px; height:56px; margin:3px; padding:0; text-align:left; background-image:url('/kuva/2863/76_0.jpg')">
+          <img src="/img/uusi/vain_vaihto.png" alt="Myös vaihto">
+         </div></td>
+        <td><a href="/asunto/2863" rel="nofollow" target="_blank"><strong>Messitytönkatu 10 </strong><br> <span>00</span><span>180</span> Helsinki<br>2h+tk+s, Kerrostalo</a></td>
+        <td style="text-align:center;">48.0 m²</td>
+        <td style="text-align:center;">191 124 <br><span class="harmaa">(3 981,75  / m²)</span></td>
+        <td style="text-align:center;">1998</td>
+        <td class="borderright" style="text-align:center;">23.10.2017</td>
+       </tr> 
+       <tr class="taulu_vari2">
+        <td style="text-align:center;" class="borderleft">
+         <div style="width:84px; height:56px; margin:3px; padding:0; text-align:left; background-image:url('/kuva/2862/76_0.jpg')"></div></td>
+        <td><a href="/asunto/2862" rel="nofollow" target="_blank"><strong>Lehtovuorenkatu 9B</strong><br> <span>00</span><span>390</span> Helsinki<br>4h+tk+s, Erillistalo</a></td>
+        <td style="text-align:center;">104.0 m²</td>
+        <td style="text-align:center;">398 000 <br><span class="harmaa">(3 826,92  / m²)</span></td>
+        <td style="text-align:center;">2004</td>
+        <td class="borderright" style="text-align:center;">22.10.2017</td>
+       </tr> 
+       <tr class="taulu_vari1">
+        <td style="text-align:center;" class="borderleft">
+         <div style="width:84px; height:56px; margin:3px; padding:0; text-align:left; background-image:url('/kuva/ei_thumb.jpg')"></div></td>
+        <td><a href="/asunto/2861" rel="nofollow" target="_blank"><strong>Rusthollarinkuja 7 Puotila</strong><br> <span>00</span><span>910</span> Helsinki<br>5h+k+s, Kerrostalo</a></td>
+        <td style="text-align:center;">107.5 m²</td>
+        <td style="text-align:center;">299 000 <br><span class="harmaa">(2 781,40  / m²)</span></td>
+        <td style="text-align:center;">2000</td>
+        <td class="borderright" style="text-align:center;">18.10.2017</td>
+       </tr> 
+       <tr class="taulu_vari2">
+        <td style="text-align:center;" class="borderleft">
+         <div style="width:84px; height:56px; margin:3px; padding:0; text-align:left; background-image:url('/kuva/2854/76_11.jpg')"></div></td>
+        <td><a href="/asunto/2854" rel="nofollow" target="_blank"><strong>Korppaanmäentie 16</strong><br> <span>00</span><span>300</span> Helsinki<br>2h+kk, Kerrostalo</a></td>
+        <td style="text-align:center;">43.5 m²</td>
+        <td style="text-align:center;">225 000 <br><span class="harmaa">(5 172,41  / m²)</span></td>
+        <td style="text-align:center;">1992</td>
+        <td class="borderright" style="text-align:center;">7.10.2017</td>
+       </tr> 
+       <tr class="taulu_vari1">
+        <td style="text-align:center;" class="borderleft">
+         <div style="width:84px; height:56px; margin:3px; padding:0; text-align:left; background-image:url('/kuva/2850/76_2.jpg')">
+          <img src="/img/uusi/vain_vaihto.png" alt="Myös vaihto">
+         </div></td>
+        <td><a href="/asunto/2850" rel="nofollow" target="_blank"><strong>Heino Kasken katu 4</strong><br> <span>00</span><span>180</span> Helsinki<br>2h+tk+s, Kerrostalo</a></td>
+        <td style="text-align:center;">53.5 m²</td>
+        <td style="text-align:center;">267 300 <br><span class="harmaa">(4 996,26  / m²)</span></td>
+        <td style="text-align:center;">2013</td>
+        <td class="borderright" style="text-align:center;">28.9.2017</td>
+       </tr> 
+       <tr class="taulu_vari2">
+        <td style="text-align:center;" class="borderleft">
+         <div style="width:84px; height:56px; margin:3px; padding:0; text-align:left; background-image:url('/kuva/ei_thumb.jpg')">
+          <img src="/img/uusi/vain_vaihto.png" alt="Myös vaihto">
+         </div></td>
+        <td><a href="/asunto/2849" target="_blank"><strong>Toini muonan katu 8</strong><br> <span>00</span><span>560</span> Helsinki<br>2h+kk+s, Kerrostalo</a></td>
+        <td style="text-align:center;">50.0 m²</td>
+        <td style="text-align:center;">180 000 <br><span class="harmaa">(3 600,00  / m²)</span></td>
+        <td style="text-align:center;">2004</td>
+        <td class="borderright" style="text-align:center;">27.9.2017</td>
+       </tr> 
+      </tbody>
+     </table>
+     <div style="padding:10px; margin-top:10px; margin-bottom:10px; float:left;">
+      &lt; edellinen 
+      <b>1</b> 
+      <a href="javascript:submit_href(2)">2</a> 
+      <a href="javascript:submit_href(2)">seuraava &gt;</a>
+     </div>
+     <div style="padding:10px; margin-top:10px; margin-bottom:10px; float:right;">
+      <a href="/haku">Tee uusi haku</a>
+     </div>
+     <div class="clear"></div>
+    </form> 
+   </div> 
+  </div>   
+ </body>
+</html>
+
