@@ -1,0 +1,15 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>italo.hitaskotiscraper</groupId>
+  <artifactId>hitaskotiscraper</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Hitas koti scraper</name>
+  <description>Scraper that checks new house ads in hitaskoti.fi and sends an email</description>
+  <dependencies>
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.11.1</version>
+    </dependency>
+  </dependencies>
+</project>
