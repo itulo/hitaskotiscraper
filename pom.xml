@@ -4,7 +4,7 @@
   <artifactId>hitaskotiscraper</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Hitas koti scraper</name>
-  <description>Scraper that checks new house ads in hitaskoti.fi and sends an email</description>
+  <description>Scraper that checks new house ads in hitaskoti.fi and sends a message through Telegram</description>
   <dependencies>
     <dependency>
       <groupId>org.jsoup</groupId>
