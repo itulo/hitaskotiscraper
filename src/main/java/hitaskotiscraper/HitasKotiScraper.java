@@ -3,6 +3,7 @@ package hitaskotiscraper;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -26,10 +27,14 @@ public class HitasKotiScraper implements Runnable{
 		executor.scheduleAtFixedRate(new HitasKotiScraper(), 0, 5, TimeUnit.MINUTES);
 	}
 	
+	public void run(){
+		HitasKotiScraper.scrape();
+	}
+	
 	/*
 	 * Get the ad. If the ad's date is today and the ad's url has not been sent, send the ad through Telegram
 	 */
-	public void run(){
+	public static void scrape(){
 		HitasKotiAd ad = null;
 		try {
 			ad = getFirstHitasKotiAd();
@@ -62,7 +67,7 @@ public class HitasKotiScraper implements Runnable{
 		Element firstAd = page.selectFirst("tr.taulu_vari1");
 		
 		String date = page.selectFirst("td.borderright").text();
-		ad.setDatePublished(LocalDate.parse(date));
+		ad.setDatePublished(LocalDate.parse(date, DateTimeFormatter.ofPattern("dd.MM.yyyy")));
 		
 		Elements elementA = firstAd.select("a");
 		
