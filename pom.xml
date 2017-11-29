@@ -1,22 +1,62 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>italo.hitaskotiscraper</groupId>
-  <artifactId>hitaskotiscraper</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>Hitas koti scraper</name>
-  <description>Scraper that checks new house ads in hitaskoti.fi and sends a message through Telegram</description>
-  <packaging>jar</packaging>
-  <dependencies>
-    <dependency>
-      <groupId>org.jsoup</groupId>
-      <artifactId>jsoup</artifactId>
-      <version>1.11.1</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>italo.hitaskotiscraper</groupId>
+	<artifactId>hitaskotiscraper</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Hitas koti scraper</name>
+	<description>Scraper that checks new house ads in hitaskoti.fi and sends a message through Telegram</description>
+	<packaging>jar</packaging>
+  
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+  
+	<dependencies>
+  		<dependency>
+    		<groupId>org.jsoup</groupId>
+    		<artifactId>jsoup</artifactId>
+    		<version>1.11.1</version>
+		</dependency>
+    	<dependency>
+    		<groupId>junit</groupId>
+    		<artifactId>junit</artifactId>
+    		<version>4.12</version>
+    		<scope>test</scope>
+    	</dependency>
+	</dependencies>
+  
+ 	<build>
+  		<plugins>
+  			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <archive>
+                    	<manifest>
+                       		<mainClass>hitaskotiscraper.HitasKotiScraper</mainClass>
+                       	</manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+    		<plugin>
+        		<artifactId>maven-assembly-plugin</artifactId>
+            		<configuration>
+            			<source>${java.version}</source>
+                    	<target>${java.version}</target>
+                		<archive>
+                    		<manifest>
+                        		<mainClass>hitaskotiscraper.HitasKotiScraper</mainClass>
+                        	</manifest>
+                    	</archive>
+                    	<descriptorRefs>
+                        	<descriptorRef>jar-with-dependencies</descriptorRef>
+                    	</descriptorRefs>
+                	</configuration>
+            	</plugin>
+        	</plugins>
+ 	</build>
+    
 </project>
